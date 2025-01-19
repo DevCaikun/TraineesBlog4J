@@ -1,0 +1,79 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: TraineesBlog
+  security:
+    user:
+      name: admin # 登录用户名
+      password: admin # 登录密码
+  datasource:
+    # p6spy 提供的驱动类用于打印完整的 SQL 语句、执行耗时等,-勿在生产环境使用，因为有极大性能损耗
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    # 数据库连接的URL
+    url: jdbc:p6spy:mysql://localhost:3306/tb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: DevCaikun666
+    # HikariCP是一个高性能的连接池实现
+    hikari:
+      # Hikari连接池中最小空闲连接数
+      minimum-idle: 5
+      # Hikari连接池中允许的最大连接数
+      maximum-pool-size: 20
+      # 连接是否自动提交事务
+      auto-commit: true
+      # 连接在连接池中闲置的最长时间，超过这个时间会被释放
+      idle-timeout: 30000
+      # 连接池的名字
+      pool-name: TraineesBlog-HikariCP
+      # 连接在连接池中的最大存活时间，超过这个时间会被强制关闭
+      max-lifetime: 1800000
+      # 获取连接的超时时间
+      connection-timeout: 30000
+      # 用于测试连接是否可用的SQL查询，这里使用的是SELECT 1，表示执行这个查询来测试连接
+      connection-test-query: SELECT 1
+
+#  security:
+#    user:
+#      name: admin # 登录用户名
+#      password: 123456 # 登录密码
+
+# log 日志
+logging:
+  config: classpath:logback-surfer.xml
+
+# springdoc-openapi项目配置
+#springdoc:
+#  swagger-ui:
+#    path: /apis.html # API Specification
+#    tags-sorter: alpha
+#    operations-sorter: alpha
+#  api-docs:
+#    path: /v3/api-docs
+#  group-configs:
+#    - group: 'surfer'
+#      paths-to-match: '/**'
+#      packages-to-scan: cn.trainees.traineesblog.surfer
+
+# knife4j的增强配置
+knife4j:
+  enable: true # 开启增强配置
+  setting:
+    language: zh_cn
+    enable-search: false
+    enable-footer: false
+    enable-footer-custom: true
+    footer-custom-content: TraineesBlog License 2.0 | Copyright 2025 [练习生基地](https://www.trainees.cn)
+
+# minio (上传图片需要，需配置成自己的地址)
+minio:
+  endpoint: http://127.0.0.1:9000
+  accessKey: DevCaikun
+  secretKey: DevCaikun666
+  bucketName: trainees-blog
+
+# Lucene 全文检索
+lucene:
+  indexDir: E:\\DevelopmentKitProject\\IntelliJ\\TraineesBlog\\logs\\lucene-index # lucene 索引存放的位置
