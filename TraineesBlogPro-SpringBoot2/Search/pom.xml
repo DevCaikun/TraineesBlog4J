@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>cn.trainees.blog</groupId>
-        <artifactId>TraineesBlogPro-Spring-Boot2</artifactId>
+        <artifactId>TraineesBlogPro-SpringBoot2</artifactId>
         <version>${revision}</version>
     </parent>
 
