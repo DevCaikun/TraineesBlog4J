@@ -8,7 +8,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /*src文件夹别名*/
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*", //路径映射，相对于baseUrl
+      ],
+    },
+
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
