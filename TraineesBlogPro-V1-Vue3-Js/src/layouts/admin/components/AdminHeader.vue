@@ -7,7 +7,7 @@
             <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
                 @click="handleMenuWidth">
                 <el-icon>
-                    <Fold v-if="menuStore.menuWidth == '250px'" />
+                    <Fold v-if="menuStore.menuWidth === '250px'" />
                     <Expand v-else />
                 </el-icon>
             </div>
@@ -93,7 +93,7 @@ import { updateAdminPassword } from '@/api/admin/user'
 import { showMessage, showModel } from '@/composables/util'
 import { useRouter } from 'vue-router'
 import FormDialog from '@/components/FormDialog.vue'
-import {ArrowDown} from "@element-plus/icons-vue";
+import {Aim, ArrowDown, Expand, Fold, FullScreen} from "@element-plus/icons-vue";
 
 const router = useRouter()
 
@@ -130,8 +130,8 @@ const handleCommand = (command) => {
 // 退出登录
 function logout() {
     showModel('是否确认要退出登录？').then(() => {
-        userStore.logout()
-        showMessage('退出登录成功！')
+        userStore.logout();
+        showMessage('退出登录成功！');
         // 跳转登录页
         router.push('/login')
     })

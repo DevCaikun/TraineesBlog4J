@@ -6,11 +6,11 @@
             <!-- 指定为 flex 布局，并设置为屏幕垂直水平居中，高度为 100% -->
             <div
                 class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInLeft animate__fast">
-                <h2 class="font-bold text-4xl mb-7 text-white">TraineesBlog 登录</h2>
-                <p class="text-white">一款后端由 OpenJDK21+SpringBoot3+SpringSecurity6+MybaitsPlus3+PostgreSql17</p>
-                <p class="text-white">前端由 TypeScript5+Vite6+React19+AntDesign5+Tailwindcss4 开发的前后端分离博客。</p>
+                <h2 class="font-bold text-4xl mb-7 text-white">TraineesBlog-V1-Java-Js 登录</h2>
+                <p class="text-white">一款后端由 OpenJDK11+SpringBoot2+SpringSecurity5+MyBatisPlus3+MySql8</p>
+                <p class="text-white">前端由 JavaScript13+Vite5+Vue3+ElementPlus2+Tailwindcss3 开发的前后端分离博客。</p>
                 <!-- 指定图片宽度为父级元素的 1/2 -->
-                <img src="@/assets/developer.png" class="w-1/2">
+                <img src="@/assets/developer.png" class="w-1/2" alt="">
             </div>
         </div>
         <div class="flex flex-col col-span-2 order-1 md:col-span-1 md:order-2 bg-white dark:bg-gray-800">

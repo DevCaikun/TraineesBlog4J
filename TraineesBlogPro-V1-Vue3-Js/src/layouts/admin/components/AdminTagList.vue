@@ -28,6 +28,7 @@
 
 <script setup>
 import { useTabList } from '@/composables/useTagList.js'
+import {ArrowDown} from "@element-plus/icons-vue";
 
 const { menuStore, activeTab, tabList, tabChange, removeTab, handleCloseTab } = useTabList()
 </script>

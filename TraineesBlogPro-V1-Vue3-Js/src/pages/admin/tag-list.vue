@@ -8,7 +8,7 @@
                 <div class="ml-3 w-52 mr-5"><el-input v-model="searchTagName" placeholder="请输入（模糊查询）" /></div>
 
                 <el-text>创建日期</el-text>
-                <div class="ml-3 w-30 mr-5">
+                <div class="ml-3 w-90 mr-5">
                     <!-- 日期选择组件（区间选择） -->
                     <el-date-picker v-model="pickDate" type="daterange" range-separator="至" start-placeholder="开始时间"
                         end-placeholder="结束时间" size="default" :shortcuts="shortcuts" @change="datepickerChange" />

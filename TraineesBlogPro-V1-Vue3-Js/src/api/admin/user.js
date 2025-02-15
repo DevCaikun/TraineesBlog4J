@@ -7,7 +7,7 @@ export function login(username, password) {
 
 // 获取登录用户信息
 export function getUserInfo() {
-    return axios.post("/admin/user/info")
+    return axios.post("/admin/user/info");
 }
 
 // 修改用户密码
